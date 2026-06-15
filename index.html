@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Voice Remover</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="hero">
+      <div>
+        <h1>Video Voice Remover</h1>
+        <p class="subtitle">Upload a video, remove the voice from its audio track, and render a final downloadable video.</p>
+      </div>
+      <div class="note">This demo performs extraction and processing in the browser. Replace the client-side separation step with a server API for production AI voice removal.</div>
+    </div>
+
+    <label class="file-picker">
+      Choose video file
+      <input id="videoFile" type="file" accept="video/*">
+    </label>
+
+    <div class="buttons">
+      <button id="renderButton" disabled>Remove Voice & Render</button>
+      <a id="downloadLink" class="download-button" hidden download="final-video.webm">Download Final Video</a>
+    </div>
+
+    <div class="panel">
+      <div class="panel-item">
+        <h2>Original Video</h2>
+        <video id="originalVideo" controls></video>
+      </div>
+      <div class="panel-item">
+        <h2>Rendered Video</h2>
+        <video id="finalVideo" controls></video>
+      </div>
+    </div>
+
+    <div class="status-group">
+      <p id="status" class="status">Upload a video file to begin the workflow.</p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
